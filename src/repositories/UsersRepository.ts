@@ -5,8 +5,8 @@ import { getRepository, Repository} from 'typeorm';
 
 
 class UsersRepository implements IUsersRepository{
-
-  constructor(private ormRepository: Repository<User>){
+  private ormRepository: Repository<User>;
+  constructor(){
 
     this.ormRepository = getRepository(User);
   }
@@ -47,4 +47,4 @@ class UsersRepository implements IUsersRepository{
   }
 
 }
-export { UsersRepository }
+export default  UsersRepository;

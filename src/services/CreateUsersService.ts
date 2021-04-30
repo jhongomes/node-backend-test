@@ -2,7 +2,7 @@ import AppError from "../errors/AppError";
 
 import { User } from "../entities/User";
 import { IUsersRepository } from "../repositories/IUsersRepository";
-import { TreeChildren } from "typeorm";
+
 
 
 interface IRequest{
@@ -15,8 +15,9 @@ interface IRequest{
 }
 
 class CreateUsersService {
+ private usersRepository : IUsersRepository;
 
-  constructor(private usersRepository: IUsersRepository){
+  constructor(usersRepository: IUsersRepository){
     this.usersRepository = usersRepository;
   }
 
