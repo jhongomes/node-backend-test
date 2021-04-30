@@ -1,8 +1,11 @@
 
 
 import express, { Request, Response, NextFunction } from 'express';
+
 import AppError from './errors/AppError';
-import path from 'path';
+
+import "./database";
+
 
 
 
@@ -24,4 +27,6 @@ app.use((err: Error, resquest: Request, response: Response, _:NextFunction)=>{
 })
 
 
-app.listen(3333);
+app.listen(3333, () => {
+  console.log("server start")
+});
