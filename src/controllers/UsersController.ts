@@ -21,5 +21,14 @@ class UsersController {
     return response.status(201).json(users);
   }
 
+  public async list(request: Request, response: Response): Promise<Response>{
+
+    const usersRepository = new UsersRepository();
+    const users = await usersRepository.listar();
+
+
+    return response.json(users);
+  }
+
 }
 export { UsersController }

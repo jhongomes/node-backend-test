@@ -6,8 +6,6 @@ import { usersRouter } from "./users";
 const routes = Router();
 
 
-routes.get('/', (request, response ) =>
-response.json({ message: 'BACKEND 🚀🚀'  }));
 
 
 routes.use("/users", usersRouter);
