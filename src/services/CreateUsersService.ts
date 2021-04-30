@@ -30,6 +30,26 @@ class CreateUsersService {
       throw new AppError("Nickname already exists! ", 400);
     }
 
+    if(!name){
+      throw new AppError('Fill in the name field !', 400);
+     }
+
+    if(!lastname){
+      throw new AppError('Fill in the lastname field !', 400);
+     }
+
+   if(!nickname){
+      throw new AppError('Fill in the nickname field !', 400);
+     }
+
+   if(!address){
+      throw new AppError('Fill in the address field !', 400);
+     }
+     if(!bio){
+      throw new AppError('Fill in the bio field !', 400);
+     }
+
+
     const users = await this.usersRepository.create({
       name,
       lastname,
