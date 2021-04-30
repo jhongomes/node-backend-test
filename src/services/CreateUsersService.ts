@@ -24,6 +24,12 @@ class CreateUsersService {
 
   public async execute({ name, lastname, nickname, address, bio}: IRequest): Promise<User>{
 
+    const verifyNickname = await this.usersRepository.findByNickname(nickname);
+
+    if(verifyNickname){
+      throw new AppError("Nickname already exists! ", 400);
+    }
+
     const users = await this.usersRepository.create({
       name,
       lastname,

@@ -48,5 +48,11 @@ class UsersRepository implements IUsersRepository{
     })
   }
 
+  public async findByNickname(nickname: string): Promise<User | undefined> {
+    return this.ormRepository.findOne({
+      nickname,
+    })
+  }
+
 }
 export default  UsersRepository;
