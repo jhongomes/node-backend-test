@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
-import UsersRepository  from "repositories/UsersRepository";
-
-import { CreateUsersService } from "../services/CreateUsersService";
+import UsersRepository from "../repositories/UsersRepository";
+import  CreateUsersService  from "../services/CreateUsersService";
 
 
 class UsersController {

@@ -1,7 +1,7 @@
 import AppError from "../errors/AppError";
 
-import { User } from "../entities/User";
-import { IUsersRepository } from "../repositories/IUsersRepository";
+import  User  from "../entities/User";
+import IUsersRepository  from "../repositories/IUsersRepository";
 
 
 
@@ -15,7 +15,8 @@ interface IRequest{
 }
 
 class CreateUsersService {
- private usersRepository : IUsersRepository;
+
+ private usersRepository: IUsersRepository;
 
   constructor(usersRepository: IUsersRepository){
     this.usersRepository = usersRepository;
@@ -30,7 +31,7 @@ class CreateUsersService {
       address,
       bio
     });
-    return users;
+    return users
   }
 }
-export { CreateUsersService }
+export default  CreateUsersService;

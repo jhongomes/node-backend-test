@@ -1,7 +1,7 @@
-import { ICreateUsersDTO } from "../Dtos/ICreateUsersDTO";
-import { User } from "../entities/User";
+import ICreateUsersDTO  from "../Dtos/ICreateUsersDTO";
+import  User  from "../entities/User";
 
-interface IUsersRepository {
+export default interface IUsersRepository {
 
   create(createUsersDTO: ICreateUsersDTO): Promise<User>;
   listar(): Promise<User[]>;
@@ -12,4 +12,4 @@ interface IUsersRepository {
 
 }
 
-export { IUsersRepository }
+
