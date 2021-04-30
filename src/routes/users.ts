@@ -8,6 +8,7 @@ const usersController = new UsersController();
 
 usersRouter.post("/", usersController.create);
 usersRouter.get("/", usersController.list);
+usersRouter.get("/:nickname", usersController.findByNickname);
 
 
 export { usersRouter }

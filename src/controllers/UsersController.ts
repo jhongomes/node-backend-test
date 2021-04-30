@@ -30,5 +30,15 @@ class UsersController {
     return response.json(users);
   }
 
+  public async findByNickname(request: Request, response: Response): Promise<Response>{
+    const { nickname } = request.params;
+
+    const usersRepository = new UsersRepository();
+    const createUsers = await usersRepository.findByNickname(nickname);
+
+
+     return response.json(createUsers)
+  }
+
 }
 export { UsersController }
