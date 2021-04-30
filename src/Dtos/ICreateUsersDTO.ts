@@ -1,5 +1,5 @@
 
-export default interface  ICreateUsersDTO{
+interface  ICreateUsersDTO{
   name: string;
   lastname: string;
   nickname: string;
@@ -7,3 +7,4 @@ export default interface  ICreateUsersDTO{
   bio: string;
 
 }
+export { ICreateUsersDTO }
