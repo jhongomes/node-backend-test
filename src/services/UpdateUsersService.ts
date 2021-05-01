@@ -27,6 +27,7 @@ class UpdateUsersService{
 
     }
 
+
     users.lastname = lastname;
     users.address = address;
 
@@ -36,4 +37,6 @@ class UpdateUsersService{
   }
 
 }
+
+
 export default UpdateUsersService;
