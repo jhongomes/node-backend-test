@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import UsersRepository from "../repositories/UsersRepository";
 import  CreateUsersService  from "../services/CreateUsersService";
+import UpdateUsersService from "../services/UpdateUsersService";
 
 
 class UsersController {
@@ -38,6 +39,23 @@ class UsersController {
 
 
      return response.json(createUsers)
+  }
+
+
+  public async Update(request: Request, response: Response): Promise<Response>{
+    const { id } = request.params;
+    const { lastname, address} = request.body;
+
+    const usersRepository = new UsersRepository();
+    const updateUsers = new UpdateUsersService(usersRepository);
+
+    const users = await updateUsers.execute({
+      id,
+      lastname,
+      address,
+    });
+
+    return response.status(201).json(users);
   }
 
 }
