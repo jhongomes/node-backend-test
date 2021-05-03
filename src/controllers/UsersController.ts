@@ -29,7 +29,7 @@ class UsersController {
     const users = await usersRepository.listar();
 
 
-    return response.json(users);
+    return response.status(200).json(users);
   }
 
   public async findByNickname(request: Request, response: Response): Promise<Response>{

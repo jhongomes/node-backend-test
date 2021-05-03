@@ -20,7 +20,9 @@ class DeleteUsersService {
 
     if(!users){
       throw new AppError('User not found!', 400);
-  }
+     }
+
+
 
   await this.usersRepository.remove(users);
 

@@ -1,0 +1,105 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "RentaLX Documentation",
+        "description": "This is an API Rent",
+        "version": "1.0.0",
+        "contact": {
+            "email": "jhonatangomes859@gmail.com"
+        }
+    },
+
+    "paths": {
+        "/users":{
+            "post":{
+               "tags": ["Users"],
+                "sumary": "Create a users",
+                "description": "Create a new users",
+                "requestBody":{
+                "content": {
+                    "aplication/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "lastname": {
+                                    "type": "string"
+                                },
+                                "nickname":{
+                                  "type": "string"
+                                },
+                                "address": {
+                                  "type": "string"
+                                },
+                                "bio":{
+                                  "type": "string"
+                                }
+                            },
+                            "example": {
+                                "name": "users name sample",
+                                "lastname": "users lastname sample",
+                                "nickname": "users_nickname",
+                                "address": "users street, neighborhood and descriptions",
+                                "bio": "talks about you user"
+                            }
+                        }
+                    }
+                }
+
+            },
+            "responses":{
+              "201":{
+                "description": "Created"
+              },
+              "400": {
+                "description": "Users aready exists "
+              }
+            }
+
+        },
+        "get":{
+
+          "tags": ["Users"],
+          "sumary": "List all users",
+          "description": "list all users",
+          "responses":{
+            "200":{
+              "description": "Sucess",
+              "content":{
+                "aplication/json":{
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name":{
+                          "type": "string"
+                        },
+                        "lastname":{
+                          "type": "string"
+                        },
+                        "nickname":{
+                          "type":"string"
+                        },
+                        "address":{
+                          "type":"string"
+                        },
+                        "bio":{
+                          "type":"string"
+                        }
+                      }
+
+                    }
+                  }
+                }
+              }
+            }
+
+        }
+      }
+    }
+
+  }
+ }

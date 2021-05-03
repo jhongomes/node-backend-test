@@ -60,3 +60,111 @@
     - Se o nickname passado já existir, deve retornar status e mensagem de erro.
   - [] Deletar um usuário baseado no id recebido como parâmetro de rota: retorna o status de sucesso.
 
+
+### 🚀 Tecnologias
+---
+Este projeto foi desenvolvido com as seguintes tecnologias:
+
+- [Nodejs](https://nodejs.org/en/)
+- [Express](http://expressjs.com/pt-br/)
+- [Typescript](https://docs.microsoft.com/pt-br/archive/msdn-magazine/2015/january/typescript-understanding-typescript)
+- [TypeORM](https://typeorm.io/#/)
+- [Docker](https://www.docker.com/)
+- [VS Code](https://code.visualstudio.com/) com [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) e [ESlint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+
+### ❗ Como baixar
+---
+
+Para clonar e executar esse projeto, você precisa do [Git](https://git-scm.com/), [Nodejs v12.16](https://nodejs.org/en/) ou superior + [Yarn 1.22](https://yarnpkg.com/) ou superior  instalado no seu computador. Digite na sua linha de comando:
+
+``` bash
+
+    # Clonar o repositório
+    $ git clone https://github.com/jhongomes/node-backend-test.git
+
+    # Entrar no repositório
+    $ cd node-backend-test
+
+    # Instalar as dependências
+    $ yarn
+
+    # Abrir projeto
+    $ code .
+
+
+```
+
+### 🔗 Banco de dados
+
+ Para estabelecer uma conexão com o banco, você precisa de [Docker v19.03](http://docs.docker.oeynet.com/toolbox/toolbox_install_windows/) ou superior instalado no seu computador. Digite na sua linha de comando:
+
+ ``` bash
+    # Criar uma imagem do postgres com docker
+    $ docker run --name BACKEND -e POSTGRES_PASSWORD=docker -p  5432:5432 -d postgres
+
+    # Executar o banco
+    $ docker start BACKEND
+
+    # Verificar a url host de conexão
+    $ docker-machine ls
+
+    # Configurar a url listada no comando acima dentro do 'ormconfig.json' do projeto
+    ex url: 192.168.99.108
+
+    # Execute o projeto
+    $ yarn dev
+
+```
+
+### 📁 Migrations
+
+Para migrar a tabela existente no projeto para o docker, execute o comando no terminal do seu editor:
+
+```
+$ yarn typeorm migration:run
+```
+---
+### 🟣 Insomnia
+
+ Para testar a API desenvolvida você precisa de [Insomnia v7.1](https://insomnia.rest/) ou superior instalado no seu computador.
+
+``` bash
+  # Gerenciar ambiente com a rota
+  $ { "baseUrl": "http://localhost:3333"  }
+```
+---
+### 💬 Recursos para cadastrar as requisições
+
+ `post/users` : Criar um novo usuário recebendo os dados pelo corpo da requisição : `name`, `lastname`, `nickname`, `address`, `bio` .
+
+<img src="./tmp/createusuario.png" alt="">
+
+---
+  `get/users` : Listar todos os usuários cadastrados .
+
+<img src="./tmp/listartodosusuarios.png" alt="">
+
+---
+ `get/users/nickname` : Listar  um usuário pelo `nickname`  passado pelo parâmetro, retornando único usuário .
+
+<img src="./tmp/buscarusuario.png" alt="">
+
+---
+
+ `put/users/id` : Alterar `lastname` e `address` recebido pelo corpo da requisição, baseado no id recebido como parâmetro da rota .
+
+ <img src="./tmp/update.png" alt="">
+
+---
+
+ `delete/id` : Deletar um usuário baseado no id recebido como parâmetro da rota :
+
+ <img src="./tmp/delete.png" alt="">
+
+---
+### ✔ swagger
+
+  `http://localhost:3333/api-docs`
+
+
+Feito com ❤ por Jhonatan Gomes
